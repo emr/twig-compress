@@ -1,5 +1,5 @@
 # twig-compress
-Output compressor like {% spaceless %}
+output**compressor**for**twig**butbetterthan`{% spaceless %}`
 
 ## install
 
@@ -7,72 +7,85 @@ Output compressor like {% spaceless %}
 
 ##### without symfony:
 
-    $loader = new \Twig_Loader_Filesystem([
-        __DIR__.'/templates'
-    ]);
-    $this->twig = new \Twig_Environment($loader);
-    
-    // add extension to your twig engine
-    $this->twig->addExtension(new CompressExtension());
-    
+```php
+$loader = new \Twig_Loader_Filesystem([
+    __DIR__.'/templates'
+]);
+$this->twig = new \Twig_Environment($loader);
+
+// add extension to your twig engine
+$this->twig->addExtension(new CompressExtension());
+```
+
 ##### with symfony:
 
-add bundle
+enable bundle
 
-    $bundles = [
-        ...
-        new \Func\CompressBundle\FuncCompressBundle(),
-        ...
-    ];
+```php
+$bundles = [
+    ...
+    new \Func\CompressBundle\FuncCompressBundle(),
+    ...
+];
+```
     
 ## examples
 
 #### basic usage
 
-    {% compress %}
-    <html>
-        <head>
-            <style>
-                body {
-                    background: #fcc200;
-                }
-            </style>
-            <script>
-                alert('hello')
-            </script>
-        </head>
-    </html>
-    {% endcompress %}
-    
+```twig
+{% compress %}
+<html>
+    <head>
+        <style>
+            body {
+                background: #fcc200;
+            }
+        </style>
+        <script>
+            alert('hello')
+        </script>
+    </head>
+</html>
+{% endcompress %}
+```
+
 **output:**
 
-    <html><head><style> body { background: #fcc200; } </style><script> alert('hello') </script></head></html>
+```twig
+<html><head><style> body { background: #fcc200; } </style><script> alert('hello') </script></head></html>
+```
     
 #### use with secure option
 
-    {% compress not secure %}
-    <html>
-        <head>
-            <style>
-                body {
-                    background: #fcc200;
-                }
-            </style>
-            <script>
-                alert('hello')
-            </script>
-        </head>
-    </html>
-    {% endcompress %}
-    
+this does the same thing with `{% spaceless %}`
+
+```twig
+{% compress not secure %}
+<html>
+    <head>
+        <style>
+            body {
+                background: #fcc200;
+            }
+        </style>
+        <script>
+            alert('hello')
+        </script>
+    </head>
+</html>
+{% endcompress %}
+```
 you can use `{% compress secure=false %}` instead of `{% compress not secure %}`
 
 **output:**
 
-    <html><head><style>
-                body {
-                    background: #fcc200;
-                }
-            </style><script>
-                alert('hello')
-            </script></head></html>
+```twig
+<html><head><style>
+            body {
+                background: #fcc200;
+            }
+        </style><script>
+            alert('hello')
+        </script></head></html>
+```
