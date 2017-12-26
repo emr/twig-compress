@@ -8,13 +8,8 @@ output**compressor**for**twig**butbetterthan`{% spaceless %}`
 ##### without symfony:
 
 ```php
-$loader = new \Twig_Loader_Filesystem([
-    __DIR__.'/templates'
-]);
-$this->twig = new \Twig_Environment($loader);
-
 // add extension to your twig engine
-$this->twig->addExtension(new CompressExtension());
+$twigEngine->addExtension(new \Func\Twig\CompressExtension());
 ```
 
 ##### with symfony:
