@@ -1,0 +1,5 @@
+services:
+    twig.extension.compress:
+        class: Func\Twig\CompressExtension
+        tags:
+            - { name: twig.extension }

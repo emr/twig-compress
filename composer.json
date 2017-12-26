@@ -1,0 +1,15 @@
+{
+    "name": "funcphp/twig-compress",
+    "description": "Output compressor for twig",
+    "autoload": {
+        "psr-4": {
+            "Func\\": "."
+        }
+    },
+    "require": {
+        "twig/twig": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}

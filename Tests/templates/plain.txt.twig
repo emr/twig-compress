@@ -1,0 +1,14 @@
+{% compress not secure %}
+
+    compress
+    test
+    not secure
+
+{% endcompress %}
+{% compress secure=false %}
+
+:
+
+plain text
+
+{% endcompress %}
