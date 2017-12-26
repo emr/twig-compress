@@ -2,8 +2,9 @@
 output**compressor**for**twig**butbetterthan`{% spaceless %}`
 
 ## install
+download repo
 
-    $ composer require funcphp/twig-compress
+    $ composer require funcphp/twig-compress "dev-master"
 
 ##### without symfony:
 
